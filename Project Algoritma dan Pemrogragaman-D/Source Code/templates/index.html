@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Interaktif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Kuis Interaktif</h1>
+        
+        {% if skor is not none %}
+            <div class="alert alert-info text-center">
+                <h2>Hasil Anda</h2>
+                <p><strong>Skor:</strong> {{ skor }}%</p>
+                <p><strong>Jawaban Benar:</strong> {{ jawaban }}</p>
+                <p><strong>Jawaban Anda:</strong> {{ jawaban_user }}</p>
+                <a href="/" class="btn btn-primary mt-3">Coba Lagi</a>
+            </div>
+        {% else %}
+            <form method="POST">
+                {% for i, soal in enumerate(bank_soal) %}
+                    <div class="mb-4">
+                        <h5>{{ i + 1 }}. {{ soal }}</h5>
+                        {% for pilihan in pilihan_soal[i] %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="jawaban{{ i }}" id="jawaban{{ i }}{{ pilihan[0] }}" value="{{ pilihan[0] }}">
+                                <label class="form-check-label" for="jawaban{{ i }}{{ pilihan[0] }}">
+                                    {{ pilihan }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-success">Kirim Jawaban</button>
+            </form>
+        {% endif %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
