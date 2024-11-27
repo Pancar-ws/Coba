@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+        <form method="POST">
+            {% for idx, question in enumerate(questions) %}
+                <div class="question-block">
+                    <p>{{ idx + 1 }}. {{ question["question"] }}</p>
+                    {% for option in question["options"] %}
+                        <label>
+                            <input type="radio" name="question-{{ idx }}" value="{{ option[0] }}">
+                            {{ option }}
+                        </label><br>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
