@@ -1,0 +1,151 @@
+<!-- <!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Aplikasi Kuis</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang di Aplikasi Kuis!</h1>
+        <h2>
+            kelompok satria baja hitam <br>1. pancar <br>2. faqih <br> 3. faiza <br>4. haq <br> 5. fahri
+        </h2> 
+        <a href="/kuis" class="btn">Mulai Kuis</a>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz.io</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background: url(static/revisi-1.jpg); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+            
+        }
+        .header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .header .btn {
+            margin-top: 200px;
+            padding: 1px 1px;
+            font-size: 2em;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            width: 180px;
+            height: 80px;
+            text-align: center;
+            /* float: right; */
+            
+        }
+        .header .btn:hover{
+            background-color: white;
+            color: black;
+    
+        }
+        .about-section {
+            background-color: grey;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        .about-section h2 {
+            margin-bottom: 20px;
+
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            
+        }
+        .team .member {
+            background-color:black;
+            color: blueviolet;
+            border-radius: 8px;
+            padding: 15px;
+            width: 200px;
+            float: right;
+            font-size: 12px;
+            
+        }
+
+        .team .member {
+            color: white;
+        }
+        
+        .team .member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            margin-bottom: 10;
+            float: left;
+            
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Selamat Datang Di Quiz.io</h1>
+        <p>By Kelompok AmbaQuiz</p>
+        <p></p>
+        <a href="/kuis" class="btn">Play Now</a>
+    </div>
+    <div class="about-section">
+        <h2>About Us</h2>
+        <div class="team">
+            <div class="member">
+                <img src="static/fotopribadi.jpg" alt="Profile"> <!-- Ganti dengan gambar -->
+                <p>H1D024012</p>
+                <p>Mhd. Fahri Irfandi Dewantara</p>
+            </div>
+            <div class="member">
+                <img src="static/pancar-salinan.jpg" alt="Profile">
+                <p>H1D024018</p>
+                <p>Pancar Wahyu Setiabi</p>
+            </div>
+            <div class="member">
+                <img src="static/jep.jpg" alt="Profile">
+                <p>H1D024082</p>
+                <p>Muhammad Hudzayfa Ismail</p>
+            </div>
+            <div class="member">
+                <img src="static/faqih-salinan.jpg" alt="Profile">
+                <p>H1D024047</p>
+                <p>Faqih Ardiansyah</p>
+            </div>
+            <div class="member">
+                <img src="static/haq-salinan.jpg" alt="Profile">
+                <p>H1D024060</p>
+                <p>Muhammad Sholahatul Haq</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
